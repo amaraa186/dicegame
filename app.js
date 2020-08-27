@@ -41,6 +41,8 @@ function shineerehel() {
     document.getElementById("name-1").textContent = "Player 2";
 
     diceDom.style.display = "none";
+
+    document.querySelector(".player-"+ activePlayer + "-panel").classList.add("active");
 }
 function shooShid() {
     if(isNewGame) {
@@ -70,6 +72,7 @@ function Hadgal() {
     document.getElementById('score-' + activePlayer).textContent = scores[activePlayer] += roundScore;
 
     if(scores[activePlayer] >= 100) {
+        document.querySelector(".player-"+ activePlayer + "-panel").classList.remove("active");
         document.getElementById('name-' + activePlayer).textContent = "WINNER!!!";
         isNewGame = false;
     } else {
